@@ -1,5 +1,6 @@
 import {createServer} from 'http';
 
+const port = process.env.PORT
 const server = createServer((req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.write(JSON.stringify({msg: 'Hello you are using my api'}));
@@ -7,6 +8,6 @@ const server = createServer((req, res) => {
 });
 
 // running the server
-server.listen(5000, () => {
-  console.log(`server is running on port 5000`);
+server.listen(port, () => {
+  console.log(`server is running on port ${port}`);
 });
